@@ -29,7 +29,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		.antMatchers("/", "/**/*.css", "/**/*.js", "/**/*.ico", "/resources/**/*.*").permitAll()
 		.anyRequest().authenticated()
 		.and().formLogin().loginPage("/login").defaultSuccessUrl("/main").permitAll()
-		.and().logout().invalidateHttpSession(true).permitAll();
+		.and().logout().logoutSuccessUrl("/").invalidateHttpSession(true).permitAll();
 	}
 
 	@Autowired
